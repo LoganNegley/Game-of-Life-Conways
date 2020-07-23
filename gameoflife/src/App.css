@@ -3,18 +3,21 @@
 }
 
 .board{
- 
+  width:32.7%;
+  background-color:black;
+  margin:4rem auto;
 }
 .cell_container{
   display:grid;
   grid-template-columns:repeat(25,20px);
   grid-template-rows: repeat(25,20px);
-  margin:4rem auto;
-  width:61%;
-  background-color:black;
 }
 .cell{
   width:20px;
   height:20px;
   border:greenyellow solid 1px;
+}
+
+.live{
+  background-color: white;
 }
