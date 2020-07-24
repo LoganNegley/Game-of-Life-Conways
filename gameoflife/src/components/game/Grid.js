@@ -16,7 +16,7 @@ function Grid(){
                     key={`${r}-${c}`}
                     onClick={()=>{
                         const copyGrid = cloneGrid(grid)
-                        copyGrid[r][c] = true
+                        copyGrid[r][c] = grid[r][c] ? false : true
                         setGrid(copyGrid)
                     }}
                     >
