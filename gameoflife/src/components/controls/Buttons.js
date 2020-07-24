@@ -6,6 +6,7 @@ function ControlButtons(props) {
         <button>Start</button>
         <button>Stop</button>
         <button>Clear</button>
+        <button>Random</button>
     </div>
   );
 }

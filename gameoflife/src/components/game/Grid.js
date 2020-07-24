@@ -4,8 +4,7 @@ let rowNum = 25;
 let colsNum= 25;
 
 function Grid(){
-    const [isAlive, setIsAlive] = useState(false)
-    const [grid, setGrid] = useState(Array(rowNum).fill().map(() => Array(colsNum).fill(isAlive)))
+    const [grid, setGrid] = useState(Array(rowNum).fill().map(() => Array(colsNum).fill(false)))
 
     return (
         <div className = "board">
