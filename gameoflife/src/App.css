@@ -17,6 +17,9 @@
   height:20px;
   border:greenyellow solid 1px;
 }
+.cell:hover{
+  background-color: red;
+}
 
 .live{
   background-color: white;
