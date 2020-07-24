@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-
-let rowNum = 25;
-let colsNum= 25;
+import {CloneGrid} from '../helpers/helperFunc';
 
 function Grid(){
+    const [rowNum, setRowNum] = useState(25)
+    const [colsNum, setColsNum] = useState(25)
     const [grid, setGrid] = useState(Array(rowNum).fill().map(() => Array(colsNum).fill(false)))
 
     return (
@@ -15,7 +15,7 @@ function Grid(){
                     style= {{backgroundColor: grid[r][c] ? 'white' : undefined}} 
                     key={`${r}-${c}`}
                     onClick={()=>{
-                        const copyGrid = cloneGrid(grid)
+                        const copyGrid = CloneGrid(grid)
                         copyGrid[r][c] = grid[r][c] ? false : true
                         setGrid(copyGrid)
                     }}
@@ -26,9 +26,5 @@ function Grid(){
         </div>
     );
 }
-
-function cloneGrid (original){
-return JSON.parse(JSON.stringify(original))
-};
 
  export default Grid;
