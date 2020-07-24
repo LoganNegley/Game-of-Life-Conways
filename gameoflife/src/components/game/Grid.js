@@ -15,7 +15,7 @@ function Grid(){
                     style= {{backgroundColor: grid[r][c] ? 'white' : undefined}} 
                     key={`${r}-${c}`}
                     onClick={()=>{
-                        const copyGrid = [...grid]
+                        const copyGrid = cloneGrid(grid)
                         copyGrid[r][c] = true
                         setGrid(copyGrid)
                     }}
@@ -26,5 +26,9 @@ function Grid(){
         </div>
     );
 }
+
+function cloneGrid (original){
+return JSON.parse(JSON.stringify(original))
+};
 
  export default Grid;

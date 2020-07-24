@@ -10,14 +10,13 @@ import ControlsContext from '../src/context/ControlsContext';
 function App() {
 const [generation, setGeneration] = useState(0)
 const [random, setRandom] = useState(false)
-const [startSimulation, setStartSimulation]= useState(false)
+
 
   return (
     <div className="App">
       <h1>Game Of Life</h1>
-      <ControlsContext.Provider value= {{random,generation, startSimulation}}>
+      <ControlsContext.Provider value= {{random,generation}}>
         <Buttons/>
-        
         <Grid/>
       </ControlsContext.Provider>
     </div>
