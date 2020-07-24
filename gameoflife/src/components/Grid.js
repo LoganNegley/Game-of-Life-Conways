@@ -1,31 +1,22 @@
 import React, {useState} from 'react';
 
+let rowNum = 25;
+let colsNum= 25
+
 function Grid(){
     const [isAlive, setIsAlive] = useState(false)
+    const [grid, setGrid] = useState(Array(rowNum).fill().map(() => Array(colsNum).fill(false)))
 
-// Grid array to hold cells
-    const grid = []
-    // Creating grid with 25x25 cells
-    for(let i = 1; i <= 625; i++){
-        grid.push(Array.from(Array(625), () => isAlive))
-    }; 
-
-// onclick to change weather cell is alive or not
-    const changeCellState= event => {
-        event.preventDefault();
-        setIsAlive(!isAlive)
-    };
+    const rows = []
+    for (var r = 0; r < rowNum; r++){
+        for (var c = 0; c < colsNum; c++){
+            rows.push(grid)
+        }
+    }
 
     return (
         <div className = "board">
             <div className = "cell_container">
-                {grid.map((item, i) => (
-                    <div 
-                    className={!isAlive ? 'cell' : 'live' } 
-                    key={i}
-                    onClick = {changeCellState}>
-                    </div>
-                ))}
             </div>
         </div>
     );
