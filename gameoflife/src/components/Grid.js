@@ -20,7 +20,6 @@ function Grid(){
                         setGrid(copyGrid)
                     }}
                     >
-
                     </div>
                 ))}
             </div>
