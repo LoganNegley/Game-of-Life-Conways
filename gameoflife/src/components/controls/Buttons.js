@@ -1,13 +1,10 @@
 import React, {useState, useContext} from 'react';
 // Component imports
-import GenerationCount from '../controls/Generation';
-// Context imports
-import ControlsContext from './../../context/ControlsContext';
+import Grid from '../game/Grid';
 
 function ControlButtons() {
-    const [startSimulation, setStartSimulation]= useState(false)
-    // State managment from ControlsContext
-    const {random, generation} = useContext(ControlsContext)
+    const [startSimulation, setStartSimulation]= useState(false);
+    const [generation, setGeneration] = useState(0);
 
     // Button functions
     const simulationStart= ()=>{
@@ -23,7 +20,8 @@ function ControlButtons() {
         <button onClick={simulationStart}>{!startSimulation ? 'Start' : 'Stop'}</button>
         <button>Clear</button>
         <button>Random</button>
-        <GenerationCount generation={generation}/>
+        <h2>Generations: {generation}</h2>
+        <Grid/>
     </div>
   );
 }
