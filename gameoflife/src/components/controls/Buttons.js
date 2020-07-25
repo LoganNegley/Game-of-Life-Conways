@@ -1,12 +1,18 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useEffect} from 'react';
 // Component imports
 import Grid from '../game/Grid';
 
 function ControlButtons() {
     const [startSimulation, setStartSimulation]= useState(false);
     const [generation, setGeneration] = useState(0);
+    const [isClear, setIsClear] = useState();
 
     // Button functions
+       const clearGrid = ()=>{
+        !isClear ? setIsClear(true) : setIsClear(false)
+        console.log(isClear)
+    }
+
     const simulationStart= ()=>{
         if (!startSimulation ){
             setStartSimulation(true)
@@ -14,14 +20,15 @@ function ControlButtons() {
             setStartSimulation(false)
         }
     };
+ 
 
   return (
     <div className="control_buttons">
         <button onClick={simulationStart}>{!startSimulation ? 'Start' : 'Stop'}</button>
-        <button>Clear</button>
+        <button onClick={clearGrid}>Clear</button>
         <button>Random</button>
         <h2>Generations: {generation}</h2>
-        <Grid/>
+        <Grid running ={startSimulation} generation={generation} clearBoard={isClear}/>
     </div>
   );
 }

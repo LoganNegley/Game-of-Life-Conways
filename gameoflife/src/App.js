@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
 // Imported Components
-
 import Buttons from '../src/components/controls/Buttons';
 
 function App() {
