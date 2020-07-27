@@ -9,4 +9,4 @@ const findNeighbors = [
     [-1,0],
 ];
 
-default export findNeighbors
+export default findNeighbors;

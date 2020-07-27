@@ -1,19 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {CloneGrid} from '../helpers/helperFunc';
-// import findNeighbors from '../';
-
-const findNeighbors = [
-    [0, -1],
-    [0,-1],
-    [1, -1],
-    [-1,1],
-    [1,1],
-    [-1,-1],
-    [1,0],
-    [-1,0],
-];
-
-
+import findNeighbors from '../data/data';
 
 function Grid(props){
     const [rowNum, setRowNum] = useState(25)
@@ -21,10 +8,6 @@ function Grid(props){
     const [grid, setGrid] = useState(Array(rowNum).fill().map(() => Array(colsNum).fill(false)))
     const [interval, setInterval] = useState('')
     const [generation, setGeneration] = useState(0);
-    // props passed down
-    // running = false
-    // generation = 0
-    // clearBoard = false
 
 // Runs simulation of game
     const runGame = ()=>{
@@ -33,17 +16,14 @@ function Grid(props){
                 const newGrid = CloneGrid(grid)  //Create a new grid
                 let neighbors = 0;
                 findNeighbors.map((x,y) =>{
-                    const R = r + x
-                    const C = c + x
-                    if(R >= 0 && R < rowNum && C >= 0 && C < colsNum){
-                        neighbors += newGrid[R,C]
-                    }
-                })
-            })
-        })
+                });
+            });
+        });
+
         console.log('running')
         setInterval(setTimeout(runGame, 1000))// Conditional to simulate game
     };
+
 // Stops simulation of game
     const stopGame =()=>{
         setInterval(clearTimeout(interval))
