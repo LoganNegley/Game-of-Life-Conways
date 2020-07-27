@@ -28,7 +28,7 @@ function ControlButtons() {
         <button onClick={clearGrid}>Clear</button>
         <button>Random</button>
         <h2>Generations: {generation}</h2>
-        <Grid running ={running} generation={generation} clearBoard={isClear}/>
+        <Grid running ={running} generation = {generation} setGeneration={setGeneration} clearBoard={isClear}/>
     </div>
   );
 }
