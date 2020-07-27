@@ -15,8 +15,10 @@ function Grid(props){
             row.map((col, c) =>{   // for each col in row
                 const newGrid = CloneGrid(grid)  //Create a new grid
                 let neighbors = 0;
-                findNeighbors.map((x,y) =>{
-                });
+                if(newGrid[r][c] === true){
+                    
+                }
+
             });
         });
 
