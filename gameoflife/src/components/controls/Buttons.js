@@ -5,7 +5,7 @@ import Grid from '../game/Grid';
 function ControlButtons() {
     const [startSimulation, setStartSimulation]= useState(false);
     const [generation, setGeneration] = useState(0);
-    const [isClear, setIsClear] = useState();
+    const [isClear, setIsClear] = useState(false);
 
     // Button functions
        const clearGrid = ()=>{
