@@ -7,7 +7,6 @@ function Grid(props){
     const [rowNum, setRowNum] = useState(25)
     const [colsNum, setColsNum] = useState(25)
     const [grid, setGrid] = useState(Array(rowNum).fill().map(() => Array(colsNum).fill(false)))
-    const[isRunning, setIsRunning] = useState(false)
     const [interval, setInterval] = useState('')
     // props passed down
     // running = false
@@ -27,10 +26,8 @@ function Grid(props){
     useEffect(()=>{
         if(props.running){
             runGame();
-            setIsRunning(true)
         }else{
             stopGame()
-            setIsRunning(false)
         }
     },[props.running])
 
