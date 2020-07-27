@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 import Grid from '../game/Grid';
 
 function ControlButtons() {
-    const [startSimulation, setStartSimulation]= useState(false);
+    const [running, setRunning]= useState(false);
     const [generation, setGeneration] = useState(0);
     const [isClear, setIsClear] = useState(false);
 
@@ -14,21 +14,22 @@ function ControlButtons() {
     }
 
     const simulationStart= ()=>{
-        if (!startSimulation ){
-            setStartSimulation(true)
-        } else{
-            setStartSimulation(false)
-        }
+        setRunning(true)
+    };
+
+    const simulationStop= ()=>{
+        setRunning(false)
     };
  
 
   return (
     <div className="control_buttons">
-        <button onClick={simulationStart}>{!startSimulation ? 'Start' : 'Stop'}</button>
+        <button onClick={simulationStart}>Start</button>
+        <button onClick={simulationStop}>Stop</button>
         <button onClick={clearGrid}>Clear</button>
         <button>Random</button>
         <h2>Generations: {generation}</h2>
-        <Grid running ={startSimulation} generation={generation} clearBoard={isClear}/>
+        <Grid running ={running} generation={generation} clearBoard={isClear}/>
     </div>
   );
 }
