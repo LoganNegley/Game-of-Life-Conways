@@ -13,11 +13,12 @@ function Grid(props){
     // generation = 0
     // clearBoard = false
 
+// Runs simulation of game
     const runGame = ()=>{
         console.log('running')
         setInterval(setTimeout(runGame, 1000))// Conditional to simulate game
     };
-
+// Stops simulation of game
     const stopGame =()=>{
         setInterval(clearTimeout(interval))
         console.log('Stopped')

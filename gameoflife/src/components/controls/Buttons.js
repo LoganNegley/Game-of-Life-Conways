@@ -12,11 +12,10 @@ function ControlButtons() {
         !isClear ? setIsClear(true) : setIsClear(false)
         console.log(isClear)
     }
-
+    // Start and stop simulation buttons
     const simulationStart= ()=>{
         setRunning(true)
     };
-
     const simulationStop= ()=>{
         setRunning(false)
     };
