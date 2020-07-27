@@ -4,7 +4,7 @@ import Grid from '../game/Grid';
 
 function ControlButtons() {
     const [running, setRunning]= useState(false);
-    const [generation, setGeneration] = useState(0);
+    
     const [isClear, setIsClear] = useState(false);
 
     // Button functions
@@ -27,8 +27,7 @@ function ControlButtons() {
         <button onClick={simulationStop}>Stop</button>
         <button onClick={clearGrid}>Clear</button>
         <button>Random</button>
-        <h2>Generations: {generation}</h2>
-        <Grid running ={running} generation = {generation} setGeneration={setGeneration} clearBoard={isClear}/>
+        <Grid running ={running} clearBoard={isClear}/>
     </div>
   );
 }
