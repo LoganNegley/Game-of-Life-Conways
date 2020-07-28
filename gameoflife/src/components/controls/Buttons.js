@@ -30,7 +30,7 @@ function ControlButtons() {
         <button onClick={simulationStop}>Stop</button>
         <button onClick={clearGrid}>Clear</button>
         <button onClick={selectRandom}>Random</button>
-        <Grid setIsClear={setIsClear} running ={running} clearBoard={isClear} random={random}/>
+        <Grid running ={running} isClear={isClear} setRandom={setRandom} random={random}/>
     </div>
   );
 }

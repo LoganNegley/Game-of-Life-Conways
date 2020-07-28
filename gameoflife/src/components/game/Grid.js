@@ -37,7 +37,6 @@ function Grid(props){
                 }
             }}
         setGrid(newGrid)
-        props.setIsClear(false)
     };
 
 // Runs when running state changes
@@ -51,8 +50,22 @@ function Grid(props){
 
 // Runs when random state changes
     useEffect(()=>{
-        randomBoard();
+        if(props.random === true && !props.running){
+            randomBoard();
+        }
     },[props.random])
+
+    useEffect(()=>{
+        let newGrid = CloneGrid(grid)
+        for(let a = 0; a < rowNum; a++){
+            for(let b = 0; b < colsNum; b++){
+                if(newGrid[a][b] === true){
+                    newGrid[a][b] = false
+                }
+            }}
+        props.setRandom(false)
+        setGrid(newGrid)
+    },[props.isClear])
 
     return (
         <div className = "board">
