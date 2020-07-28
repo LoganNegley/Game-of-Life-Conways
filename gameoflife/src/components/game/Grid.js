@@ -15,13 +15,9 @@ function Grid(props){
             row.map((col, c) =>{   // for each col in row
                 const newGrid = CloneGrid(grid)  //Create a new grid
                 let neighbors = 0;
-                if(newGrid[r][c] === true){
-                    
-                }
-
             });
         });
-
+    // Need code here////////////////
         console.log('running')
         setInterval(setTimeout(runGame, 1000))// Conditional to simulate game
     };
@@ -32,6 +28,22 @@ function Grid(props){
         console.log('Stopped')
     };
 
+    const randomBoard = ()=>{
+        let newGrid = CloneGrid(grid)
+        for(let a = 0; a < rowNum; a++){
+            for(let b = 0; b < colsNum; b++){
+                   if(Math.floor(Math.random() * 4 === 1)){
+                    newGrid[a][b] = true;
+                }
+                if(newGrid[a][b] === false){
+                    newGrid[a][b] = true
+                }
+            }
+        }
+        console.log(newGrid)
+        setGrid(newGrid)
+    };
+
     useEffect(()=>{
         if(props.running){
             runGame();
@@ -39,6 +51,11 @@ function Grid(props){
             stopGame()
         }
     },[props.running])
+
+    useEffect(()=>{
+        randomBoard();
+        console.log('Ran')
+    },[props.random])
 
     return (
         <div className = "board">

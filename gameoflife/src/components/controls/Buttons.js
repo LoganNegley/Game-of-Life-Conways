@@ -4,11 +4,11 @@ import Grid from '../game/Grid';
 
 function ControlButtons() {
     const [running, setRunning]= useState(false);
-    
     const [isClear, setIsClear] = useState(false);
+    const [random, setRandom] = useState(false)
 
     // Button functions
-       const clearGrid = ()=>{
+    const clearGrid = ()=>{
         !isClear ? setIsClear(true) : setIsClear(false)
         console.log(isClear)
     }
@@ -19,6 +19,10 @@ function ControlButtons() {
     const simulationStop= ()=>{
         setRunning(false)
     };
+
+    const selectRandom =()=>{
+        setRandom(true)
+    };
  
 
   return (
@@ -26,10 +30,12 @@ function ControlButtons() {
         <button onClick={simulationStart}>Start</button>
         <button onClick={simulationStop}>Stop</button>
         <button onClick={clearGrid}>Clear</button>
-        <button>Random</button>
-        <Grid running ={running} clearBoard={isClear}/>
+        <button onClick={selectRandom}>Random</button>
+        <Grid running ={running} clearBoard={isClear} random={random}/>
     </div>
   );
 }
+
+ 
 
 export default ControlButtons;
