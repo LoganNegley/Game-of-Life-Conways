@@ -25,25 +25,22 @@ function Grid(props){
 // Stops simulation of game
     const stopGame =()=>{
         setInterval(clearTimeout(interval))
-        console.log('Stopped')
     };
 
+// Populate board with random live cells
     const randomBoard = ()=>{
         let newGrid = CloneGrid(grid)
         for(let a = 0; a < rowNum; a++){
             for(let b = 0; b < colsNum; b++){
-                   if(Math.floor(Math.random() * 4 === 1)){
+                   if(Math.random() < 0.5/2){
                     newGrid[a][b] = true;
                 }
-                if(newGrid[a][b] === false){
-                    newGrid[a][b] = true
-                }
-            }
-        }
-        console.log(newGrid)
+            }}
         setGrid(newGrid)
+        props.setIsClear(false)
     };
 
+// Runs when running state changes
     useEffect(()=>{
         if(props.running){
             runGame();
@@ -52,9 +49,9 @@ function Grid(props){
         }
     },[props.running])
 
+// Runs when random state changes
     useEffect(()=>{
         randomBoard();
-        console.log('Ran')
     },[props.random])
 
     return (

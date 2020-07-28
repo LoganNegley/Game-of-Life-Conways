@@ -10,7 +10,6 @@ function ControlButtons() {
     // Button functions
     const clearGrid = ()=>{
         !isClear ? setIsClear(true) : setIsClear(false)
-        console.log(isClear)
     }
     // Start and stop simulation buttons
     const simulationStart= ()=>{
@@ -31,7 +30,7 @@ function ControlButtons() {
         <button onClick={simulationStop}>Stop</button>
         <button onClick={clearGrid}>Clear</button>
         <button onClick={selectRandom}>Random</button>
-        <Grid running ={running} clearBoard={isClear} random={random}/>
+        <Grid setIsClear={setIsClear} running ={running} clearBoard={isClear} random={random}/>
     </div>
   );
 }
