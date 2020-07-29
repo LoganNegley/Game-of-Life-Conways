@@ -23,10 +23,6 @@ function ControlButtons() {
     const selectRandom =()=>{
         setRandom(true)
     };
-
-    // const generationCount = ()=>{
-    //     while
-    // }
  
 
   return (
