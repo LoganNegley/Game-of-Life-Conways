@@ -1,32 +1,31 @@
-.flex-wrapper{
-  display:flex;
-  flex-flow: wrap row;
-  justify-content: center;
-  width:75%;
-  margin:0 auto;
-}
-
-.flex_child{
-  width: 65%;
-  display:inline-block;
-  align-items: flex-start;
-}
-
-.rules{
-  width:25%;
-  margin-right: 3rem;
-}
-
-.controls{
-  
-}
-
 h1{
   text-align: center;
   color:red;
 }
 h2,h3,h4{
   color:red;
+}
+
+/* Flex wrapper and children */
+.flex-wrapper{
+  display:flex;
+  flex-flow: wrap row;
+  justify-content: space-between;
+  width:75%;
+  margin:0 auto;
+
+}
+
+.flex_child{
+  width: 45%;
+}
+
+.rules{
+  width:25%;
+}
+.controls{
+  width:15%;
+  order: 1;
 }
 
 /* Board and cells */
@@ -50,8 +49,7 @@ h2,h3,h4{
 
 /* Controls */
 .control_container{
-  width:50%;
-  margin:0 auto;
+  /* width:50%; */
 }
 
 

@@ -29,11 +29,11 @@ function ControlButtons() {
     <>
     <div className="flex_child controls">
         <div className="control_container">
+            <h2>Generations: {generation}</h2>
             <button onClick={simulationStart}>Start</button>
             <button onClick={simulationStop}>Stop</button>
             <button onClick={clearGrid}>Clear</button>
             <button onClick={selectRandom}>Random</button>
-            <h2>Generations: {generation}</h2>
         </div>
     </div>
     <div className="flex_child">
