@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import {CloneGrid} from '../helpers/helperFunc';
+import {CloneGrid} from '../../helpers/helperFunc';
 import findNeighbors from '../data/data';
+import GridSize from '../game/GridSize';
 
 function Grid(props){
     const [rowNum, setRowNum] = useState(25)
@@ -73,7 +74,7 @@ function Grid(props){
 
     return (
         <div className = "board">
-            <button>Change grid size here</button>
+            <GridSize setColsNum={setColsNum} setRowNum={setRowNum}/>
             <div className = "cell_container"
                 style ={{gridTemplateColumns: `repeat(${rowNum},20px)`, 
                         gridTemplateRows: `repeat(${colsNum},20px)`}} >

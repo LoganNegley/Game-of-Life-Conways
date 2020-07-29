@@ -8,4 +8,6 @@ function GridSize() {
     </div>
   );
 
+};
+
 export default GridSize;
