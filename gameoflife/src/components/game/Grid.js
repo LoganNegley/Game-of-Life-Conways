@@ -73,7 +73,8 @@ function Grid(props){
 
 
     return (
-        <div className = "board">
+        <div className = "board"
+        style = {{width: `${colsNum}` * 22}}>
             <GridSize setColsNum={setColsNum} setRowNum={setRowNum}/>
             <div className = "cell_container"
                 style ={{gridTemplateColumns: `repeat(${rowNum},20px)`, 

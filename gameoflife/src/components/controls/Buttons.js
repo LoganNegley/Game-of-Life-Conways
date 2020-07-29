@@ -26,17 +26,21 @@ function ControlButtons() {
  
 
   return (
-    <div className="control_buttons">
-        <button onClick={simulationStart}>Start</button>
-        <button onClick={simulationStop}>Stop</button>
-        <button onClick={clearGrid}>Clear</button>
-        <button onClick={selectRandom}>Random</button>
-        <h2>Generations: {generation}</h2>
+    <>
+    <div className="flex_child controls">
+        <div className="control_container">
+            <button onClick={simulationStart}>Start</button>
+            <button onClick={simulationStop}>Stop</button>
+            <button onClick={clearGrid}>Clear</button>
+            <button onClick={selectRandom}>Random</button>
+            <h2>Generations: {generation}</h2>
+        </div>
+    </div>
+    <div className="flex_child">
         <Grid running ={running} isClear={isClear} setRandom={setRandom} random={random}/>
     </div>
+    </>
   );
 }
-
- 
 
 export default ControlButtons;

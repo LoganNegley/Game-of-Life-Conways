@@ -1,20 +1,43 @@
-.App {
-  text-align: center;
+.flex-wrapper{
+  display:flex;
+  flex-flow: wrap row;
+  justify-content: center;
+  width:75%;
+  margin:0 auto;
 }
 
-h1, h2,h3,h4{
+.flex_child{
+  width: 65%;
+  display:inline-block;
+  align-items: flex-start;
+}
+
+.rules{
+  width:25%;
+  margin-right: 3rem;
+}
+
+.controls{
+  
+}
+
+h1{
+  text-align: center;
+  color:red;
+}
+h2,h3,h4{
   color:red;
 }
 
 /* Board and cells */
+
 .board{
-  width:32.7%;
-  margin:2rem auto;
+  display:inline-block;
 }
+
 .cell_container{
   display:grid;
-  /* grid-template-columns:repeat(25,20px); */
-  /* grid-template-rows: repeat(25,20px); */
+  width: 100%;
 }
 .cell{
   width:20px;
@@ -23,6 +46,12 @@ h1, h2,h3,h4{
 }
 .cell:hover{
   background-color: red;
+}
+
+/* Controls */
+.control_container{
+  width:50%;
+  margin:0 auto;
 }
 
 
