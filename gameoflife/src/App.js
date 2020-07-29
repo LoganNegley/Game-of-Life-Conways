@@ -10,7 +10,7 @@ const [random, setRandom] = useState(false)
 
   return (
     <div className="App">
-    <h1>Game Of Life</h1>
+    <h1>Conway Game Of Life</h1>
       <div className='flex-wrapper'>
         <Rules/>
         <Buttons/>
