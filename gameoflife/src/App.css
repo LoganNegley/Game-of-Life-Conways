@@ -13,8 +13,8 @@ h1, h2,h3,h4{
 }
 .cell_container{
   display:grid;
-  grid-template-columns:repeat(25,20px);
-  grid-template-rows: repeat(25,20px);
+  /* grid-template-columns:repeat(25,20px); */
+  /* grid-template-rows: repeat(25,20px); */
 }
 .cell{
   width:20px;
@@ -24,3 +24,5 @@ h1, h2,h3,h4{
 .cell:hover{
   background-color: red;
 }
+
+

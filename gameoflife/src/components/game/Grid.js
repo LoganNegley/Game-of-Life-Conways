@@ -67,14 +67,17 @@ function Grid(props){
         setGrid(newGrid)
     },[props.isClear])
 
+
     return (
         <div className = "board">
             <h2>Generations: {generation}</h2>
-            <div className = "cell_container">
+            <div className = "cell_container"
+                style ={{gridTemplateColumns: `repeat(${rowNum},20px)`, 
+                        gridTemplateRows: `repeat(${colsNum},20px)`}} >
                 {grid.map((rows,r) =>
                     rows.map((col,c) => 
                     <div className="cell" 
-                    style= {{backgroundColor: grid[r][c] ? 'white' : undefined}} 
+                    style = {{backgroundColor: grid[r][c] ? 'white' : undefined}} 
                     key={`${r}-${c}`}
                     onClick={()=>{
                         const copyGrid = CloneGrid(grid)
