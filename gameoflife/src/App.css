@@ -1,9 +1,15 @@
 h1{
   text-align: center;
-  color:red;
+  color:#45CBEF;
+  font-size: 3rem;
+}
+.drag{
+  color:#45CBEF;
 }
 h2,h3,h4,p{
-  color:red;
+  /* color:red; */
+  
+  color:#eb4514;
 }
 
 /* Flex wrapper and children */
@@ -43,8 +49,19 @@ h2,h3,h4,p{
 
 /* Slider */
 .MuiSlider-rail{
-  color:red;
+  color:#45CBEF;
 }
 .MuiSlider-thumb, .MuiSlider-mark, .MuiSlider-track{
   color: limegreen;
+}
+
+/* Accordian */
+.accordian-container{
+  width:25%;
+  margin-right: 3rem;
+}
+
+
+.Mui-expanded{
+color:#45CBEF;
 }
