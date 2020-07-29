@@ -11,7 +11,7 @@ const useStyles = makeStyles({
 
 function GridSize(props) {
   const classes = useStyles();
-  const [value, setValue] = useState(5)
+  const [value, setValue] = useState(25)
 
 
 const handleChange =(event, changeCols) =>{
@@ -32,8 +32,8 @@ props.setColsNum(value)
         step={5}
         valueLabelDisplay="on"
         marks
-        min={10}
-        max={35}
+        min={25}
+        max={50}
         onChange ={handleChange}
       />
     </div>

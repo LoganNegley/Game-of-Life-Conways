@@ -10,7 +10,6 @@ h2,h3,h4,p{
 .flex-wrapper{
   display:flex;
   flex-flow: wrap row;
-  justify-content: space-between;
   width:75%;
   margin:0 auto;
 
