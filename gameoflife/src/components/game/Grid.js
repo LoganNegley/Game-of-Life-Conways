@@ -5,11 +5,11 @@ import GridSize from '../game/GridSize';
 
 function Grid(props){
     const [rowNum, setRowNum] = useState(25)
-    const [colsNum, setColsNum] = useState(25)
+    const [colsNum, setColsNum] = useState(30)
     const [grid, setGrid] = useState(Array(rowNum).fill().map(() => Array(colsNum).fill(false)))
     const [interval, setInterval] = useState('')
     
-console.log(rowNum)
+console.log(colsNum)
 // Runs simulation of game
     const runGame = ()=>{
         grid.map((row, r)=>{     //for each row in grid

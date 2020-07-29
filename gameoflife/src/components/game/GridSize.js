@@ -11,12 +11,12 @@ const useStyles = makeStyles({
 
 function GridSize(props) {
   const classes = useStyles();
-  const [value, setValue] = useState(25)
+  const [value, setValue] = useState(5)
 
 
-const handleChange =(event, changeRows) =>{
-setValue(changeRows)
-props.setRowNum(value)
+const handleChange =(event, changeCols) =>{
+setValue(changeCols)
+props.setColsNum(value)
 }
 
 
@@ -29,11 +29,11 @@ props.setRowNum(value)
       value={value}
         defaultValue={value}
         aria-labelledby="discrete-slider"
-        step={25}
+        step={5}
         valueLabelDisplay="on"
         marks
-        min={25}
-        max={100}
+        min={10}
+        max={35}
         onChange ={handleChange}
       />
     </div>

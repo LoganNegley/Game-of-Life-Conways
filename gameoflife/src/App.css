@@ -19,21 +19,16 @@ h2,h3,h4,p{
 .flex_child{
   width: 45%;
 }
-
 .rules{
   width:25%;
 }
-.controls{
-  width:15%;
-  order: 1;
-}
+.controls
 
 /* Board and cells */
 
 .board{
   display:inline-block;
 }
-
 .cell_container{
   display:grid;
   width: 100%;
