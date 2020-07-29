@@ -7,7 +7,7 @@ function Grid(props){
     const [colsNum, setColsNum] = useState(25)
     const [grid, setGrid] = useState(Array(rowNum).fill().map(() => Array(colsNum).fill(false)))
     const [interval, setInterval] = useState('')
-    const [generation, setGeneration] = useState(0);
+    
 
 // Runs simulation of game
     const runGame = ()=>{
@@ -25,7 +25,9 @@ function Grid(props){
 // Stops simulation of game
     const stopGame =()=>{
         setInterval(clearTimeout(interval))
+        console.log('game stopped')
     };
+    
 
 // Populate board with random live cells
     const randomBoard = ()=>{
@@ -55,6 +57,7 @@ function Grid(props){
         }
     },[props.random])
 
+// Clears the board of all live cells
     useEffect(()=>{
         let newGrid = CloneGrid(grid)
         for(let a = 0; a < rowNum; a++){
@@ -70,7 +73,7 @@ function Grid(props){
 
     return (
         <div className = "board">
-            <h2>Generations: {generation}</h2>
+            <button>Change grid size here</button>
             <div className = "cell_container"
                 style ={{gridTemplateColumns: `repeat(${rowNum},20px)`, 
                         gridTemplateRows: `repeat(${colsNum},20px)`}} >
