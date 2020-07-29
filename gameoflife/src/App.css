@@ -2,7 +2,7 @@ h1{
   text-align: center;
   color:red;
 }
-h2,h3,h4{
+h2,h3,h4,p{
   color:red;
 }
 
@@ -47,9 +47,10 @@ h2,h3,h4{
   background-color: red;
 }
 
-/* Controls */
-.control_container{
-  /* width:50%; */
+/* Slider */
+.MuiSlider-rail{
+  color:red;
 }
-
-
+.MuiSlider-thumb, .MuiSlider-mark, .MuiSlider-track{
+  color: limegreen;
+}

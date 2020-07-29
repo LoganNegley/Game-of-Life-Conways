@@ -9,7 +9,7 @@ function Grid(props){
     const [grid, setGrid] = useState(Array(rowNum).fill().map(() => Array(colsNum).fill(false)))
     const [interval, setInterval] = useState('')
     
-
+console.log(rowNum)
 // Runs simulation of game
     const runGame = ()=>{
         grid.map((row, r)=>{     //for each row in grid
@@ -77,8 +77,8 @@ function Grid(props){
         style = {{width: `${colsNum}` * 22}}>
             <GridSize setColsNum={setColsNum} setRowNum={setRowNum}/>
             <div className = "cell_container"
-                style ={{gridTemplateColumns: `repeat(${rowNum},20px)`, 
-                        gridTemplateRows: `repeat(${colsNum},20px)`}} >
+                style ={{gridTemplateColumns: `repeat(${colsNum},20px)`, 
+                        gridTemplateRows: `repeat(${rowNum},20px)`}} >
                 {grid.map((rows,r) =>
                     rows.map((col,c) => 
                     <div className="cell" 
