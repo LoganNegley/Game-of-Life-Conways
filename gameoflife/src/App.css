@@ -3,12 +3,8 @@ h1{
   color:#45CBEF;
   font-size: 3rem;
 }
-.drag{
-  color:#45CBEF;
-}
+
 h2,h3,h4,p{
-  /* color:red; */
-  
   color:#eb4514;
 }
 
@@ -18,16 +14,14 @@ h2,h3,h4,p{
   flex-flow: wrap row;
   width:75%;
   margin:0 auto;
-
 }
-
 .flex_child{
   width: 45%;
 }
 .rules{
   width:25%;
 }
-.controls
+
 
 /* Board and cells */
 
@@ -44,7 +38,7 @@ h2,h3,h4,p{
   border:greenyellow solid 1px;
 }
 .cell:hover{
-  background-color: red;
+  background-color: white;
 }
 
 /* Slider */
@@ -54,14 +48,37 @@ h2,h3,h4,p{
 .MuiSlider-thumb, .MuiSlider-mark, .MuiSlider-track{
   color: limegreen;
 }
+#discrete-slider{
+  color:#45CBEF;
+  margin-top: -1rem;
+}
 
 /* Accordian */
 .accordian-container{
   width:25%;
   margin-right: 3rem;
 }
-
-
 .Mui-expanded{
 color:#45CBEF;
+}
+
+button{
+  background-color: #45CBEF;
+  color: #eb4514;
+  border:black solid 2px;
+  border-radius: 20%;
+  font-size: 1rem;
+  margin: .75rem .25rem;
+}
+button:hover{
+  padding:.75rem;
+  
+}
+.control_container{
+  display:flex;
+}
+.control_container h2{
+  order:1;
+  margin-left:3rem;
+  color:#45CBEF
 }

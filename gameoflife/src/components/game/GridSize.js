@@ -22,9 +22,6 @@ props.setColsNum(value)
 
   return (
     <div className={classes.root}>
-      <Typography id="discrete-slider" gutterBottom>
-        <p className="drag">Drag to Change Grid size</p>
-      </Typography>
       <Slider
       value={value}
         defaultValue={value}
@@ -36,6 +33,9 @@ props.setColsNum(value)
         max={45}
         onChange ={handleChange}
       />
+       <Typography id="discrete-slider" gutterBottom>
+        Drag to Change Grid size
+      </Typography>
     </div>
   );
 };

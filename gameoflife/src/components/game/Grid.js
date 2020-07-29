@@ -8,17 +8,19 @@ function Grid(props){
     const [colsNum, setColsNum] = useState(25)
     const [grid, setGrid] = useState(Array(rowNum).fill().map(() => Array(colsNum).fill(false)))
     const [interval, setInterval] = useState('')
-    
-console.log(colsNum)
 // Runs simulation of game
     const runGame = ()=>{
         grid.map((row, r)=>{     //for each row in grid
             row.map((col, c) =>{   // for each col in row
                 const newGrid = CloneGrid(grid)  //Create a new grid
                 let neighbors = 0;
+                console.log(newGrid)
+
+
+
+
             });
         });
-    // Need code here////////////////
         console.log('running')
         setInterval(setTimeout(runGame, 1000))// Conditional to simulate game
     };
@@ -82,7 +84,7 @@ console.log(colsNum)
                 {grid.map((rows,r) =>
                     rows.map((col,c) => 
                     <div className="cell" 
-                    style = {{backgroundColor: grid[r][c] ? 'white' : undefined}} 
+                    style = {{backgroundColor: grid[r][c] ? '#eb4514' : undefined}} 
                     key={`${r}-${c}`}
                     onClick={()=>{
                         const copyGrid = CloneGrid(grid)
