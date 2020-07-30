@@ -7,6 +7,7 @@ function Grid(props){
     const [colsNum, setColsNum] = useState(25)
     const [grid, setGrid] = useState(Array(rowNum).fill().map(() => Array(colsNum).fill(false)))
     const [interval, setInterval] = useState('')
+    const [generation, setGeneration] = useState(0);
 
     // Runs when running state changes
     useEffect(()=>{
@@ -34,17 +35,20 @@ function Grid(props){
                 }
             }}
         props.setRandom(false)
-        props.setGeneration(0)
+        setGeneration(0)
         setGrid(newGrid)
     },[props.isClear])
 
 // Runs simulation of game
     const runGame = ()=>{
-        setGrid(simulation(grid, rowNum, colsNum)) //helper function run simulation
-        props.setGeneration(props.generation + 1)
+        setGrid((grid)=>{
+            return simulation(grid, rowNum, colsNum)
+            }) //helper function run simulation
+        setGeneration((generation)=>{
+            return generation + 1
+            })
         console.log('running')
-        
-        setInterval(setTimeout(runGame, 1000))
+        setInterval(setTimeout(runGame, 250))
     };
 
 // Stops simulation of game
@@ -60,6 +64,7 @@ function Grid(props){
     };
 
 
+
     return (
         <div className = "board"
         style = {{width: `${colsNum}` * 22}}>
@@ -73,14 +78,17 @@ function Grid(props){
                     style = {{backgroundColor: grid[r][c] ? '#eb4514' : undefined}} 
                     key={`${r}-${c}`}
                     onClick={()=>{
+                        if(!props.running){
                         const copyGrid = CloneGrid(grid)
                         copyGrid[r][c] = grid[r][c] ? false : true
                         setGrid(copyGrid)
+                        }
                     }}
                     >
                     </div>
                 ))}
             </div>
+            <h2>Generations: {generation}</h2>
         </div>
     );
 }

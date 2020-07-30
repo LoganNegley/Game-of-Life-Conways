@@ -6,7 +6,8 @@ function ControlButtons() {
     const [running, setRunning]= useState(false);
     const [isClear, setIsClear] = useState(false);
     const [random, setRandom] = useState(false);
-    const [generation, setGeneration] = useState(0);
+    
+
 
     // Button functions
     const clearGrid = ()=>{
@@ -28,14 +29,15 @@ function ControlButtons() {
   return (
     <>
     <div className="flex_child controls">
-        <Grid generation={generation} setGeneration={setGeneration} running ={running} setRunning={setRunning} isClear={isClear} setRandom={setRandom} random={random}/>
+        <Grid running ={running} setRunning={setRunning} isClear={isClear} setRandom={setRandom} random={random}/>
         <div className="control_container">
-            <h2>Generations: {generation}</h2>
+         {(running ? <p>Simulation is running</p> : <p>Simulation has stopped</p>)}
             <button onClick={simulationStart}>Start</button>
             <button onClick={simulationStop}>Stop</button>
             <button onClick={clearGrid}>Clear</button>
             <button onClick={selectRandom}>Random</button>
         </div>
+       
     </div>
     
     </>
