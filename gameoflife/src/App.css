@@ -72,10 +72,6 @@ button{
   font-size: 1rem;
   margin: .75rem .25rem;
 }
-button:hover{
-  padding:.75rem;
-  
-}
 .control_container{
   display:flex;
 }

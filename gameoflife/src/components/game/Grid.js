@@ -13,7 +13,7 @@ function Grid(props){
     const runGame = ()=>{
         let newGrid = grid
         let copyGrid = CloneGrid(grid)
-        for(let r = 0; r < rowNum; r++){
+        for(let r = 0; r < rowNum; r++){ //going through each cell in grid
             for(let c = 0; c < colsNum; c++){
                 let neighbors = 0;
                 if(r > 0){
@@ -58,7 +58,7 @@ function Grid(props){
                 }
 
                 if(newGrid[r][c] && (neighbors < 2 || neighbors > 3)) copyGrid[r][c] = false;
-                if(!newGrid[r][c] && neighbors === 3) copyGrid[r][c] =true
+                if(!newGrid[r][c] && neighbors === 3) copyGrid[r][c] =true //if cell is dead and has 3 neighbors it is born
             }
         }
 
@@ -115,6 +115,7 @@ function Grid(props){
                 }
             }}
         props.setRandom(false)
+        props.setGeneration(0)
         setGrid(newGrid)
     },[props.isClear])
 
