@@ -2,6 +2,7 @@ h1{
   text-align: center;
   color:#45CBEF;
   font-size: 3rem;
+  margin-top:.5rem;
 }
 
 h2,h3,h4,p{
@@ -51,6 +52,7 @@ h2,h3,h4,p{
 #discrete-slider{
   color:#45CBEF;
   margin-top: -1rem;
+  margin-bottom:2rem;
 }
 
 /* Accordian */
