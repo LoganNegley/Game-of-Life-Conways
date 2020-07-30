@@ -17,6 +17,7 @@ function Grid(props){
         }
     },[props.running])
 
+
 // Runs when random state changes
     useEffect(()=>{
         if(props.random === true && !props.running){
