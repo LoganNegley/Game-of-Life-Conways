@@ -28,7 +28,7 @@ function ControlButtons() {
   return (
     <>
     <div className="flex_child controls">
-        <Grid running ={running} isClear={isClear} setRandom={setRandom} random={random}/>
+        <Grid generation={generation} setGeneration={setGeneration} running ={running} isClear={isClear} setRandom={setRandom} random={random}/>
         <div className="control_container">
             <h2>Generations: {generation}</h2>
             <button onClick={simulationStart}>Start</button>

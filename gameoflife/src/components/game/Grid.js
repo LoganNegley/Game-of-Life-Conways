@@ -64,8 +64,9 @@ function Grid(props){
 
 
         setGrid(copyGrid)
+        props.setGeneration(props.generation + 1)
         console.log('running')
-        setInterval(setTimeout(runGame, 1000))// Conditional to simulate game
+        setInterval(setTimeout(runGame, 1000))
     };
 
 
