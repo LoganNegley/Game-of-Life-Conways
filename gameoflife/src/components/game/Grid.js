@@ -17,7 +17,6 @@ function Grid(props){
         }
     },[props.running])
 
-
 // Runs when random state changes
     useEffect(()=>{
         if(props.random === true && !props.running){
@@ -44,12 +43,14 @@ function Grid(props){
         setGrid(simulation(grid, rowNum, colsNum)) //helper function run simulation
         props.setGeneration(props.generation + 1)
         console.log('running')
+        
         setInterval(setTimeout(runGame, 1000))
     };
 
 // Stops simulation of game
     const stopGame =()=>{
-        setInterval(clearTimeout(interval))
+        props.setRunning(false)
+        clearTimeout(interval)
         console.log('game stopped')
     };
     
