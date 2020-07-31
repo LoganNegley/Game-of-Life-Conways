@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {CloneGrid, generateRandom, simulation} from '../../helpers/helperFunc';
 import SpeedAdjuster from '../game/SpeedAdjuster';
+import CellShape from '../game/CellShape';
+import CellColor from '../game/CellColor';
+import GridColor from '../game/GridColor';
 
 function Grid(props){
     const [rowNum, setRowNum] = useState(25)
@@ -9,6 +12,9 @@ function Grid(props){
     const [interval, setInterval] = useState('')
     const [generation, setGeneration] = useState(0);
     const [speed, setSpeed] = useState(500)
+    const [shape, setShape] = useState('square')
+    const [cellColor, setCellColor] = useState('#eb4514')
+    const [gridColor, setGridColor] = useState('#51ff01')
 
     // Runs when running state changes
     useEffect(()=>{
@@ -68,14 +74,20 @@ function Grid(props){
     return (
         <div className = "board"
         style = {{width: `${colsNum}` * 22}}>
-            <SpeedAdjuster setSpeed={setSpeed} speed={speed}/>
+        <p>Stop simulation before adjusting game settings</p>
+            <div className="game_adjusters">
+                <SpeedAdjuster setSpeed={setSpeed} speed={speed}/>
+                <CellShape setShape={setShape} shape={shape}/>
+                <CellColor setCellColor={setCellColor} cellColor={cellColor}/>
+                <GridColor setGridColor={setGridColor} gridColor={gridColor}/>
+            </div>
             <div className = "cell_container"
                 style ={{gridTemplateColumns: `repeat(${colsNum},20px)`, 
                         gridTemplateRows: `repeat(${rowNum},20px)`}} >
                 {grid.map((rows,r) =>
                     rows.map((col,c) => 
-                    <div className="cell" 
-                    style = {{backgroundColor: grid[r][c] ? '#eb4514' : undefined}} 
+                    <div className={`cell ${shape}`} 
+                    style = {{border: `${gridColor} solid 1px`, backgroundColor: grid[r][c] ? `${cellColor}` : undefined}} 
                     key={`${r}-${c}`}
                     onClick={()=>{
                         if(!props.running){

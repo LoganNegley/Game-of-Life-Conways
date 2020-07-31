@@ -13,13 +13,13 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function SpeedAdjuster(props) {
+export default function GridColor(props) {
   const classes = useStyles();
 //   const [age, setAge] = React.useState('');
   const [open, setOpen] = React.useState(false);
 
   const handleChange = (event) => {
-    props.setSpeed(event.target.value);
+    props.setGridColor(event.target.value);
   };
 
   const handleClose = () => {
@@ -33,7 +33,7 @@ export default function SpeedAdjuster(props) {
   return (
     <div className="speed_adjuster">
       <Button className={classes.button} onClick={handleOpen}>
-        Select speed
+        Grid Color
       </Button>
       <FormControl className={classes.formControl}>
         <Select
@@ -42,12 +42,12 @@ export default function SpeedAdjuster(props) {
           open={open}
           onClose={handleClose}
           onOpen={handleOpen}
-          value={props.speed}
+          value={props.gridColor}
           onChange={handleChange}>
-          <MenuItem value={1500}> One and a half Second</MenuItem>
-          <MenuItem value={1000}> One Second</MenuItem>
-          <MenuItem value={500}> Half a Second</MenuItem>
-          <MenuItem value={250}> Quarter of a Second</MenuItem>
+          <MenuItem value={'#eb4514'}>Green</MenuItem>
+          <MenuItem value={'#ff0278'}>Pink </MenuItem>
+          <MenuItem value={'#ff002b'}>Red</MenuItem>
+          <MenuItem value={'#ff4d00'}>Orange</MenuItem>
         </Select>
       </FormControl>
     </div>

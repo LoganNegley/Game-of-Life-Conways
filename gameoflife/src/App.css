@@ -31,27 +31,25 @@ p{
 .board{
   display:inline-block;
 }
+.board p{
+  font-size: 1.25rem;;
+}
 .cell_container{
   display:grid;
   width: 100%;
 }
-.cell{
-  width:20px;
-  height:20px;
-  border:greenyellow solid 1px;
-}
 .cell:hover{
   background-color: white;
 }
-
-/* Speed adjuster */
-.speed_adjuster button{
-  border: #45CBEF solid 2px;
-  color:#45CBEF;
+.rectangle{
+  width: 10px;
 }
-.speed_adjuster p{
-color:#eb4514;
-margin:0;
+.circle{
+  border-radius: 50%;
+}
+.square{
+   width:20px;
+  height:20px;
 }
 
 /* Accordian */
@@ -78,4 +76,15 @@ button{
 .control_container p{
   margin:0 3rem;
   font-size: 1.25rem;
+}
+
+/* Adjusting buttons */
+.game_adjusters{
+  display: flex;
+}
+
+.game_adjusters button{
+  margin:.25rem;
+  border: #45CBEF solid 2px;
+  color:#45CBEF;
 }
