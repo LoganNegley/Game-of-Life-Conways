@@ -31,7 +31,7 @@ function ControlButtons() {
     <div className="flex_child controls">
         <Grid running ={running} setRunning={setRunning} isClear={isClear} setRandom={setRandom} random={random}/>
         <div className="control_container">
-         {(running ? <p>Simulation is running</p> : <p>Simulation has stopped</p>)}
+        {(running ? <p>Simulation is running</p> : <p>Simulation has stopped</p>)}
             <button onClick={simulationStart}>Start</button>
             <button onClick={simulationStop}>Stop</button>
             <button onClick={clearGrid}>Clear</button>

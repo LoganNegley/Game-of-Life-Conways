@@ -51,8 +51,17 @@ h2,h3,h4,p{
 }
 #discrete-slider{
   color:#45CBEF;
-  margin-top: -1rem;
-  margin-bottom:2rem;
+  margin-top: -.5rem;
+  margin-bottom:.75rem;
+}
+
+/* Speed adjuster */
+.speed_adjuster button{
+  border: white solid 2px;
+  color:white;
+}
+.speed_adjuster label{
+color:white;
 }
 
 /* Accordian */
@@ -69,14 +78,14 @@ button{
   color: #eb4514;
   border:black solid 2px;
   border-radius: 20%;
-  font-size: 1rem;
+  font-size: 1.25rem;
   margin: .75rem .25rem;
 }
 .control_container{
-  display:flex;
+   margin-top:-3.5rem;
+   margin-left: 12rem;
 }
-.control_container h2{
-  order:1;
-  margin-left:3rem;
-  color:#45CBEF
+.control_container p{
+  margin:0 3rem;
+  font-size: 1.25rem;
 }
