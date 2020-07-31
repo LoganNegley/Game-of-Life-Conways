@@ -1,22 +1,90 @@
-.App {
+h1{
   text-align: center;
+  color:#45CBEF;
+  font-size: 3rem;
+  margin-top:.5rem;
+  margin-bottom: 0;
 }
+h2{
+  color:#45CBEF;
+}
+p{
+  color:#eb4514;
+}
+
+/* Flex wrapper and children */
+.flex-wrapper{
+  display:flex;
+  flex-flow: wrap row;
+  width:75%;
+  margin:0 auto;
+}
+.flex_child{
+  width: 45%;
+}
+.rules{
+  width:25%;
+}
+
+
 /* Board and cells */
 .board{
-  width:32.7%;
-  background-color:black;
-  margin:2rem auto;
+  display:inline-block;
+}
+.board p{
+  font-size: 1.25rem;;
 }
 .cell_container{
   display:grid;
-  grid-template-columns:repeat(25,20px);
-  grid-template-rows: repeat(25,20px);
-}
-.cell{
-  width:20px;
-  height:20px;
-  border:greenyellow solid 1px;
+  width: 100%;
 }
 .cell:hover{
-  background-color: red;
+  background-color: white;
+}
+.rectangle{
+  width: 10px;
+}
+.circle{
+  border-radius: 50%;
+}
+.square{
+   width:20px;
+  height:20px;
+}
+
+/* Accordian */
+.accordian-container{
+  width:25%;
+  margin-right: 3rem;
+}
+.Mui-expanded{
+color:#45CBEF;
+}
+
+button{
+  background-color: #45CBEF;
+  color: #eb4514;
+  border:black solid 2px;
+  border-radius: 20%;
+  font-size: 1.25rem;
+  margin: .75rem .25rem;
+}
+.control_container{
+   margin-top:-3.5rem;
+   margin-left: 12rem;
+}
+.control_container p{
+  margin:0 3rem;
+  font-size: 1.25rem;
+}
+
+/* Adjusting buttons */
+.game_adjusters{
+  display: flex;
+}
+
+.game_adjusters button{
+  margin:.25rem;
+  border: #45CBEF solid 2px;
+  color:#45CBEF;
 }

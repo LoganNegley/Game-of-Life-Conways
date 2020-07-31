@@ -1,30 +1,46 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useEffect} from 'react';
 // Component imports
-import GenerationCount from '../controls/Generation';
-// Context imports
-import ControlsContext from './../../context/ControlsContext';
+import Grid from '../game/Grid';
 
 function ControlButtons() {
-    const [startSimulation, setStartSimulation]= useState(false)
-    // State managment from ControlsContext
-    const {random, generation} = useContext(ControlsContext)
+    const [running, setRunning]= useState(false);
+    const [isClear, setIsClear] = useState(false);
+    const [random, setRandom] = useState(false);
+    
+
 
     // Button functions
+    const clearGrid = ()=>{
+        !isClear ? setIsClear(true) : setIsClear(false)
+    }
+    // Start and stop simulation buttons
     const simulationStart= ()=>{
-        if (!startSimulation ){
-            setStartSimulation(true)
-        } else{
-            setStartSimulation(false)
-        }
+        setRunning(true)
     };
+    const simulationStop= ()=>{
+        setRunning(false)
+    };
+    // Random button activated
+    const selectRandom =()=>{
+        setRandom(true)
+    };
+ 
 
   return (
-    <div className="control_buttons">
-        <button onClick={simulationStart}>{!startSimulation ? 'Start' : 'Stop'}</button>
-        <button>Clear</button>
-        <button>Random</button>
-        <GenerationCount generation={generation}/>
+    <>
+    <div className="flex_child controls">
+        <Grid running ={running} setRunning={setRunning} isClear={isClear} setRandom={setRandom} random={random}/>
+        <div className="control_container">
+        {(running ? <p>Simulation is running</p> : <p>Simulation has stopped</p>)}
+            <button onClick={simulationStart}>Start</button>
+            <button onClick={simulationStop}>Stop</button>
+            <button onClick={clearGrid}>Clear</button>
+            <button onClick={selectRandom}>Random</button>
+        </div>
+       
     </div>
+    
+    </>
   );
 }
 
