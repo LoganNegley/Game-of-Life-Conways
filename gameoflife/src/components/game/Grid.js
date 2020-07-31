@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import {CloneGrid, generateRandom, simulation} from '../../helpers/helperFunc';
-import GridSize from '../game/GridSize';
 import SpeedAdjuster from '../game/SpeedAdjuster';
 
 function Grid(props){
@@ -65,13 +64,10 @@ function Grid(props){
         setGrid(generateRandom(grid, rowNum, colsNum)) //helper func to make board random
     };
 
-console.log(speed)
-
 
     return (
         <div className = "board"
         style = {{width: `${colsNum}` * 22}}>
-            <GridSize setColsNum={setColsNum} setRowNum={setRowNum}/>
             <SpeedAdjuster setSpeed={setSpeed} speed={speed}/>
             <div className = "cell_container"
                 style ={{gridTemplateColumns: `repeat(${colsNum},20px)`, 

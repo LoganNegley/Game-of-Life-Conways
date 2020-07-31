@@ -62,8 +62,8 @@ export default function Rules() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            It is a 'cellular automaton', and was invented by Cambridge mathematician John Conway.
-            This game became widely known when it was mentioned in an article published by Scientific American in 1970
+            Game Of Life is a 'cellular automaton', and was invented by British mathematician John Conway.
+            This game became widely known when it was mentioned in an article published by Scientific American in 1970.
             It consists of a collection of cells which, based on a few mathematical rules, can live, die or multiply. Depending on the initial conditions, the cells form various patterns throughout the course of the game.
           </Typography>
         </AccordionDetails>
@@ -74,9 +74,11 @@ export default function Rules() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Any live cell with two or three live neighbours survives.
-            Any dead cell with three live neighbours becomes a live cell.
-            All other live cells die in the next generation. Similarly, all other dead cells stay dead
+            <ol>
+              <li>Any live cell with two or three live neighbours survives.</li>
+              <li>Any dead cell with three live neighbours becomes a live cell.</li>
+              <li>All other live cells die in the next generation. Similarly, all other dead cells stay dead</li>
+            </ol>
           </Typography>
         </AccordionDetails>
       </Accordion>
