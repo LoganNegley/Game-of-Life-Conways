@@ -35,6 +35,7 @@ export default function SpeedAdjuster(props) {
       <Button className={classes.button} onClick={handleOpen}>
         Select speed
       </Button>
+      <p>Stop simulation before adjusting speed</p>
       <FormControl className={classes.formControl}>
         <Select
           labelId="demo-controlled-open-select-label"
@@ -44,6 +45,7 @@ export default function SpeedAdjuster(props) {
           onOpen={handleOpen}
           value={props.speed}
           onChange={handleChange}>
+          <MenuItem value={1500}> One and a half Second</MenuItem>
           <MenuItem value={1000}> One Second</MenuItem>
           <MenuItem value={500}> Half a Second</MenuItem>
           <MenuItem value={250}> Quarter of a Second</MenuItem>
