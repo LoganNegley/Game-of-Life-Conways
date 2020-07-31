@@ -44,7 +44,7 @@ export default function GridColor(props) {
           onOpen={handleOpen}
           value={props.gridColor}
           onChange={handleChange}>
-          <MenuItem value={'#eb4514'}>Green</MenuItem>
+          <MenuItem value={'#51ff01'}>Green</MenuItem>
           <MenuItem value={'#ff0278'}>Pink </MenuItem>
           <MenuItem value={'#ff002b'}>Red</MenuItem>
           <MenuItem value={'#ff4d00'}>Orange</MenuItem>
