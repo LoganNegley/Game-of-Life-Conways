@@ -47,7 +47,7 @@ export default function SpeedAdjuster(props) {
           <MenuItem value={1000}>Real Slow</MenuItem>
           <MenuItem value={500}>Slow</MenuItem>
           <MenuItem value={250}>Fast</MenuItem>
-          <MenuItem value={10}>Real Fast</MenuItem>
+          <MenuItem value={75}>Real Fast</MenuItem>
         </Select>
       </FormControl>
     </div>
